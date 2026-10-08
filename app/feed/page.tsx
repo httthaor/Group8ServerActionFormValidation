@@ -5,6 +5,7 @@ import { FeedHeader } from "@/components/feed/FeedHeader";
 import { PostList } from "@/components/feed/PostList";
 import { getCurrentUser } from "@/lib/auth/session";
 import { getFeedPosts } from "@/lib/data/posts";
+import FeedbackForm from "@/components/forms/FeedbackForm";
 
 export const metadata: Metadata = { title: "Bảng tin" };
 
@@ -22,6 +23,10 @@ export default async function FeedPage() {
       <FeedHeader currentUser={currentUser} />
       <div className="feed-content">
         <CreatePostForm />
+
+        {/* Form Góp ý khách hàng của nhóm */}
+        <FeedbackForm />
+
         <section className="post-section" aria-labelledby="post-list-title">
           <div className="section-heading">
             <div>
